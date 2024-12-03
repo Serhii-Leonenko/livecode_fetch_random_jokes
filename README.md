@@ -16,8 +16,8 @@ You are required to implement a Python script in `main.py` that performs the fol
     - Parse the JSON response to extract the joke's `setup` and `punchline`.
 
 2. **Display Jokes to the User:**
-    - Present the joke's `setup` and wait for the user to press Enter before showing the `punchline`.
-    - After displaying the punchline, ask the user if they want to hear another joke with `yes` answer.
+    - Displaying the joke's `setup` and wait for the user to press Enter before showing the `punchline`.
+    - After displaying the punchline, ask the user if they want to see another joke with `yes` answer.
     - Continue this process until the user decides to exit with `no` answer.
 
 3. **Save Jokes History:**
@@ -76,7 +76,7 @@ You are required to implement a Python script in `main.py` that performs the fol
    
    Create PR from your branch to the `main` branch
 
-8. That's all ) Ask mentor to check your solution
+8. **That's all ) Ask mentor to check your solution**
 
 ## **Additional notes**
 
