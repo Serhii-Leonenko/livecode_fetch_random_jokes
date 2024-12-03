@@ -1,4 +1,4 @@
-def main():
+def main() -> None:
     # this is an entrypoint, DO NOT WRITE ALL CODE HERE !!!~
     # ToDo remove these comments
 
