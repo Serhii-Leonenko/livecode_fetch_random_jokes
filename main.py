@@ -1,5 +1,5 @@
 def main():
-    # this is an entrypoint, DO NOT WRITE ALL CODE HERE !!!
+    # this is an entrypoint, DO NOT WRITE ALL CODE HERE !!!~
     # ToDo remove these comments
 
     pass
