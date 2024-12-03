@@ -1,0 +1,5 @@
+[tool.ruff]
+line-length = 79
+lint.select = ["B", "C", "E", "F", "W", "B9", "ANN", "Q0", "N8"]
+lint.ignore = ["E203", "E266", "ANN002", "ANN003", "ANN401", "N807", "N818"]
+exclude = ["venv", "test_main.py"]
