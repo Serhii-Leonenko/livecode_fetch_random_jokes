@@ -98,5 +98,5 @@ You are required to implement a Python script in `main.py` that performs the fol
 
    |      Timestamp      |             Setup             |         Punchline          |
       |:-------------------:|:-----------------------------:|:--------------------------:|
-   | 2023-10-01T12:34:56 | 	Why did the chicken cross... | 	To get to the other side! |
+   | 2023-10-01 12:34:56 | 	Why did the chicken cross... | 	To get to the other side! |
 
