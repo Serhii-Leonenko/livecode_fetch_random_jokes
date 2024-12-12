@@ -7,18 +7,23 @@ from ast import literal_eval as le
 def main() -> None:
     # this is an entrypoint, DO NOT WRITE ALL CODE HERE !!!
     # ToDo remove these comments
-    headers = ["Name", "Birthday", "Height"]
+    headers = [
+        "Timestamp",
+        "Setup",
+        "Punchline",
+    ]
 
-    with open("jokes_hostory.csv", "w") as file:
+    with open("jokes_history.csv", "w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(headers)
 
         while True:
             try:
                 r = requests.get("https://official-joke-api.appspot.com/random_joke")
-            except:
-                print()
-            response = le(r.text)
+            except requests.RequestException as e:
+                print(e)
+                return e
+            response = r.json()
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             # print(timestamp)
             setup = response["setup"]
