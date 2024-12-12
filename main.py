@@ -1,5 +1,6 @@
 import requests
 import csv
+import datetime
 
 def get_request() -> list:
     r = requests.get("https://official-joke-api.appspot.com/random_joke")
@@ -14,7 +15,7 @@ def main() -> None:
 
         data = [
             ["Timestamp", "Setup", "Punchline"],
-            ["", answer[0], answer[1]],
+            [datetime.datetime.now(), answer[0], answer[1]],
         ]
 
         with open("jokes_history.csv", mode='w', newline='') as file:
@@ -30,12 +31,6 @@ def main() -> None:
 
         if user_answer == "no":
             break
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main()
