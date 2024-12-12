@@ -1,15 +1,6 @@
 from datetime import datetime
-
 import requests
 import csv
-
-# def get_joke() -> dict:
-# r = requests.get("https://official-joke-api.appspot.com/random_joke")
-# joke = r.json()
-# print(joke.get("setup"))
-# input("Press enter to continue")
-# print(joke.get("punchline"))
-# return joke
 
 
 def main() -> None:
@@ -37,5 +28,6 @@ def main() -> None:
         elif next_joke != "yes":
             print("Please answer: yes/no")
 
+
 if __name__ == "__main__":
-        main()
+    main()
