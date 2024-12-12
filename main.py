@@ -11,10 +11,9 @@ def get_request() -> list:
 
 def main() -> None:
     while True:
-        print("Here's your joke:")
-
         answer = get_request()
 
+        print("Here's your joke:")
         print(answer[0])
 
         print("\nPress Enter to see the punchline...")
