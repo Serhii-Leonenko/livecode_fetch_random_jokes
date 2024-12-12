@@ -1,7 +1,6 @@
 import requests
 import csv
 
-
 def get_request() -> list:
     r = requests.get("https://official-joke-api.appspot.com/random_joke")
     setup = r.json()["setup"]
