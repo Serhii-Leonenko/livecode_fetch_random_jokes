@@ -1,14 +1,12 @@
 import csv
 import datetime
-from os.path import exists
-
 import requests
 import os
 
 
-def get_joke():
+def get_joke() -> str:
     try:
-        response = requests.get('https://official-joke-api.appspot.com/random_joke')
+        response = requests.get("https://official-joke-api.appspot.com/random_joke")
         setup = response.json().get("setup")
         punchline = response.json().get("punchline")
         return setup, punchline
@@ -16,7 +14,7 @@ def get_joke():
         print("Error")
 
 
-def save_joke_to_scv(time_joke: datetime, setup: str, punchline: str):
+def save_joke_to_scv(time_joke: datetime, setup: str, punchline: str) -> None:
     file_name = "jokes_history.csv"
     file_exists = os.path.isfile(file_name)
 
@@ -27,7 +25,7 @@ def save_joke_to_scv(time_joke: datetime, setup: str, punchline: str):
         writer.writerow([time_joke, setup, punchline])
 
 
-def print_joke():
+def print_joke() -> None:
     setup, punchline = get_joke()
     print(f"Here's your joke:\n{setup}")
     input("Press Enter to see the punchline...")
