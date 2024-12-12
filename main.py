@@ -19,10 +19,10 @@ def fetch_joke() -> tuple:
 def save_to_csv(setup: str, punchline: str) -> None:
     with open(JOKES_HISTORY, mode="a", newline="") as f:
         joke_writer = csv.writer(f)
-        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        if not os.path.exists(JOKES_HISTORY):
-            joke_writer.writerow(["ts", "setup", "punchline"])
-        joke_writer.writerow([ts, setup, punchline])
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if not os.path.exists(JOKES_HISTORY) or f.tell() == 0:
+            joke_writer.writerow(["setup", "punchline", "timestamp"])
+        joke_writer.writerow([setup, punchline, timestamp])
 
 def main() -> None:
     while True:
