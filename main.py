@@ -9,7 +9,7 @@ def main() -> None:
     get_joke()
 
 
-def get_joke():
+def get_joke() -> None:
     while True:
         try:
             request = requests.get(
@@ -28,7 +28,7 @@ def get_joke():
             print("Whoops something goes wrong, try again")
 
 
-def create_csv():
+def create_csv() -> None:
     path = "jokes_history.csv"
     if not os.path.exists(path):
         with open("jokes_history.csv", "w") as file:
@@ -36,7 +36,7 @@ def create_csv():
             writer.writerow(["Timestamp", "Setup", "Punchline"])
 
 
-def write_log(data: dict):
+def write_log(data: dict) -> None:
     with open("jokes_history.csv", "a") as file:
         writer = csv.writer(file)
         time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
