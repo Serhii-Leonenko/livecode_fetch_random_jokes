@@ -74,7 +74,7 @@ You are required to implement a Python script in `main.py` that performs the fol
    ```
 7. **Push the solution**
    
-   Create PR from your branch to the `main` branch
+   Create PR from your branch to this repo's `main` branch. Name the PR with your full name.
 
 8. **That's all ) Ask mentor to check your solution**
 
