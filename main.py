@@ -12,11 +12,11 @@ def main() -> None:
         input("Press enter to continue")
         print(joke.get("punchline"))
 
-        csvfile = open('jokes_history.csv', 'a', newline='', encoding='utf-8')
+        csvfile = open("jokes_history.csv", "a", newline="", encoding="utf-8")
 
         c = csv.writer(csvfile)
 
-        c.writerow(['Timestamp', 'Setup', 'Punchline'])
+        c.writerow(["Timestamp", "Setup", "Punchline"])
         date = datetime.now()
         data = [[str(date), joke.get("setup"), joke.get("punchline")]]
         for item in data:
