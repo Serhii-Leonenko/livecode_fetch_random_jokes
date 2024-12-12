@@ -41,14 +41,21 @@ def display_jokes(address: str) -> None:
             print("Sorry, can't get jokes")
             break
 
+        setup = joke.get("setup")
+        punchline = joke.get("punchline")
+
+        if not setup or not punchline:
+            print("Something went wrong")
+            break
+
         save_joke(joke)
         print("Here's your joke:")
-        print(joke.get("setup", "Error get setup"))
+        print(setup)
 
         while input("Press enter to see the punchline") != "":
             continue
 
-        print(joke.get("punchline", "Error get punchline"))
+        print(punchline)
 
         while (user_input := input(
             "If you want to see another joke print yes, else no: "
