@@ -2,7 +2,7 @@ from datetime import datetime
 import csv
 import requests
 
-def write_to_file(list_with_jokes):
+def write_to_file(list_with_jokes: list[dict]) -> None:
     fields = ["timestamp", "setup", "punchline"]
 
     with open("jokes_history.csv", "w", newline="") as csv_file:
@@ -10,7 +10,7 @@ def write_to_file(list_with_jokes):
         writer.writeheader()
         writer.writerows(list_with_jokes)
 
-def make_request():
+def make_request() -> dict:
     request = requests.get("https://official-joke-api.appspot.com/random_joke")
     setup = request.json().get("setup")
     punchline = request.json().get("punchline")
