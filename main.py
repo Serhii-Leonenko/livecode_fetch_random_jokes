@@ -5,7 +5,7 @@ import requests
 def write_to_file(list_with_jokes):
     fields = ["timestamp", "setup", "punchline"]
 
-    with open("jokes_history.csv", "w") as csv_file:
+    with open("jokes_history.csv", "w", newline="") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=fields)
         writer.writeheader()
         writer.writerows(list_with_jokes)
@@ -34,7 +34,7 @@ def main() -> None:
 
         dict_with_jokes["setup"] = joke.get("setup")
         dict_with_jokes["punchline"] = joke.get("punchline")
-        dict_with_jokes["timestamp"] = datetime.timestamp(datetime.now())
+        dict_with_jokes["timestamp"] = datetime.fromtimestamp(datetime.now().timestamp()).strftime("%Y-%m-%d %H:%M:%S")
         list_with_jokes.append(dict_with_jokes)
 
         user_answer = input("\nDo yo want to see another joke? yes/no\n")
