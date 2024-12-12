@@ -34,7 +34,9 @@ def main() -> None:
 
         dict_with_jokes["setup"] = joke.get("setup")
         dict_with_jokes["punchline"] = joke.get("punchline")
-        dict_with_jokes["timestamp"] = datetime.fromtimestamp(datetime.now().timestamp()).strftime("%Y-%m-%d %H:%M:%S")
+        dict_with_jokes["timestamp"] = datetime.fromtimestamp(
+            datetime.now().timestamp()
+        ).strftime("%Y-%m-%d %H:%M:%S")
         list_with_jokes.append(dict_with_jokes)
 
         user_answer = input("\nDo yo want to see another joke? yes/no\n")
