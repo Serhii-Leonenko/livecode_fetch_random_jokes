@@ -1,7 +1,6 @@
 import requests
 import csv
 from datetime import datetime
-from ast import literal_eval as le
 
 
 def main() -> None:
