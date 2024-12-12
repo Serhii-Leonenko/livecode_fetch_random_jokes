@@ -22,7 +22,7 @@ def save_to_csv(setup: str, punchline: str) -> None:
         ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         if not os.path.exists(JOKES_HISTORY):
             joke_writer.writerow(["ts", "setup", "punchline"])
-            joke_writer.writerow([ts, setup, punchline])
+        joke_writer.writerow([ts, setup, punchline])
 
 def main() -> None:
     while True:
