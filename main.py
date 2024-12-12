@@ -11,7 +11,7 @@ HEADERS = [
 ]
 
 
-def is_csv_empty(file_path):
+def is_csv_empty(file_path: str) -> bool:
     return os.stat(file_path).st_size == 0
 
 
@@ -20,7 +20,7 @@ def make_request() -> dict:
     return request.json()
 
 
-def write_joke(joke_data):
+def write_joke(joke_data: dict) -> None:
     time_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open(FILE_NAME, "a", newline="") as file:
         writer = csv.DictWriter(
